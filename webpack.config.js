@@ -1,12 +1,12 @@
-const path = require('path')
-const {merge} = require('webpack-merge')
+const path = require("path")
+const {merge} = require("webpack-merge")
 const{CleanWebpackPlugin} = require("clean-webpack-plagin")
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin")
 const WebpackBar =require("webpack")
 
-const loadModeConfig = (env) => {
-    require(`./build-utils/${env.mode}.config`)(env)
-}
+const loadModeConfig = (env) =>
+  require(`./build-utils/${env.mode}.config.js`)(env);
+
 module.exports = (env) => merge({
     mode: env.mode,
     context:path.resolve(__dirname, "src"),
